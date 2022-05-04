@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style/normalize.css">
+		<link rel="stylesheet" href="style/style.css">
+		<title>High pass</title>
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="wrapper header__wrapper">
+				<a href="#" class="logo"><img class="logo__img" src="./images/logo.png" alt="Логотип"></a>
+				<nav class="header__nav">
+					<div class="menu-close">
+						<span class="menu-close-line"></span>
+						<span class="menu-close-line"></span>
+					</div>
+					<ul class="header__menu menu">
+						<li class="header__menu-item"><a href="#" class="menu__link">О студии</a></li>
+						<li class="header__menu-item"><a href="#" class="menu__link">Наши проекты</a></li>
+						<li class="header__menu-item"><a href="#" class="menu__link">Услуги</a></li>
+						<li class="header__menu-item"><a href="#" class="menu__link">Мастер-классы</a></li>
+						<li class="header__menu-item"><a href="#" class="menu__link">Контакты</a></li>
+					</ul>
+					<a href="tel:+7(495)42-423-532" class="map__phone">+7 (495) 42-423-532</a>
+				</nav>
+				<ul class="header__social social">
+					<li class="header__social-item"><a href="#" class="social__link"><svg class="social__item" fill="none" viewBox="0 0 30 30" id="social_inst" xmlns="http://www.w3.org/2000/svg"><path d="M12.129 15a2.871 2.871 0 105.742 0 2.871 2.871 0 00-5.742 0z" fill="#CACACA"/><path d="M8.286 9.92c.138-.374.358-.712.644-.99.278-.286.616-.507.99-.645.304-.118.76-.258 1.6-.296.908-.041 1.18-.05 3.48-.05s2.573.008 3.48.05c.84.038 1.297.178 1.6.296.374.138.713.359.99.645.286.278.506.616.645.99.118.303.258.76.296 1.6.042.908.05 1.18.05 3.48s-.008 2.572-.05 3.48c-.038.84-.178 1.296-.296 1.6a2.67 2.67 0 01-.645.99 2.667 2.667 0 01-.99.645c-.303.118-.76.258-1.6.296-.907.042-1.18.05-3.48.05s-2.572-.008-3.48-.05c-.84-.038-1.296-.178-1.6-.296a2.852 2.852 0 01-1.634-1.635c-.118-.304-.259-.76-.297-1.6-.041-.908-.05-1.18-.05-3.48s.009-2.572.05-3.48c.038-.84.178-1.296.297-1.6zM15 19.423a4.423 4.423 0 100-8.846 4.423 4.423 0 000 8.846zm-4.598-7.987a1.034 1.034 0 100-2.068 1.034 1.034 0 000 2.068z" fill="#CACACA"/><path d="M15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15C0 6.717 6.717 0 15 0zM6.439 18.551c.041.917.187 1.543.4 2.09a4.404 4.404 0 002.52 2.52c.547.213 1.173.358 2.09.4.918.042 1.212.052 3.55.052 2.34 0 2.633-.01 3.552-.052.917-.042 1.543-.187 2.09-.4a4.22 4.22 0 001.526-.994c.438-.43.777-.95.994-1.525.213-.548.358-1.174.4-2.09.042-.92.052-1.213.052-3.552 0-2.34-.01-2.633-.052-3.551-.041-.917-.187-1.543-.4-2.09a4.22 4.22 0 00-.994-1.526 4.218 4.218 0 00-1.525-.994c-.548-.213-1.174-.358-2.09-.4-.92-.042-1.213-.052-3.552-.052-2.34 0-2.633.01-3.551.052-.917.042-1.543.187-2.09.4a4.222 4.222 0 00-1.527.994 4.22 4.22 0 00-.993 1.525c-.213.548-.359 1.174-.4 2.09-.042.92-.052 1.213-.052 3.552 0 2.34.01 2.633.052 3.551z" fill="#CACACA"/></svg></a></li>
+					<li class="header__social-item"><a href="#" class="social__link"><svg class="social__item" fill="none" viewBox="0 0 30 30" id="social_fb" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.75 0 0 6.762 0 15.09 0 22.62 5.49 28.87 12.66 30V19.458H8.85V15.09h3.81v-3.328c0-3.78 2.235-5.858 5.67-5.858 1.635 0 3.345.286 3.345.286v3.72h-1.89c-1.86 0-2.445 1.16-2.445 2.349v2.831h4.17l-.675 4.368H17.34V30a14.985 14.985 0 009.075-5.105A15.097 15.097 0 0030 15.09C30 6.762 23.25 0 15 0z" fill="#CACACA"/></svg></a></li>
+					<li class="header__social-item"><a href="#" class="social__link"><svg class="social__item" fill="none" viewBox="0 0 30 30" id="social_vk" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15zm7.609 16.622c.699.683 1.439 1.326 2.066 2.08.278.333.54.677.74 1.065.285.553.027 1.159-.467 1.192l-3.073-.001c-.794.066-1.426-.255-1.958-.797-.425-.433-.82-.894-1.229-1.342a2.871 2.871 0 00-.553-.492c-.42-.272-.783-.189-1.023.249-.245.445-.3.939-.324 1.434-.033.725-.252.914-.979.948-1.554.073-3.028-.163-4.398-.946-1.208-.69-2.144-1.666-2.959-2.77-1.587-2.152-2.803-4.514-3.895-6.944-.246-.547-.066-.84.538-.85a85.522 85.522 0 013.009-.002c.408.007.678.24.835.625.542 1.334 1.206 2.603 2.039 3.78.222.313.448.625.77.846.357.245.628.164.796-.233.107-.253.154-.523.177-.794.08-.927.09-1.854-.049-2.777-.086-.578-.41-.951-.987-1.06-.293-.056-.25-.165-.108-.332.248-.29.48-.47.944-.47h3.472c.547.107.67.353.744.904l.003 3.859c-.006.213.107.845.49.985.307.101.51-.145.693-.34.833-.883 1.426-1.926 1.957-3.005.235-.476.437-.969.634-1.462.146-.365.373-.545.785-.539l3.343.004c.099 0 .199.001.296.018.564.097.718.339.544.889-.275.863-.808 1.583-1.329 2.304-.558.772-1.154 1.517-1.707 2.293-.508.709-.468 1.066.163 1.681z" fill="#CACACA"/></svg></a></li>
+				</ul>
+				<form action="/index.php" class="header__search">
+					<button class="header__search-button" type="button">
+						<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M24.9113 22.8136L19.8536 18.3573C21.341 16.3763 22.1457 13.9543 22.1457 11.4068C22.1457 8.35737 20.9904 5.49807 18.9013 3.34219C16.8123 1.18631 14.0293 0 11.0728 0C8.11639 0 5.33342 1.19011 3.24434 3.34219C1.15157 5.49427 0 8.35737 0 11.4068C0 14.4524 1.15527 17.3193 3.24434 19.4714C5.33342 21.6273 8.1127 22.8136 11.0728 22.8136C13.5458 22.8136 15.8932 21.9847 17.8162 20.4562L22.8739 24.9086C22.902 24.9376 22.9354 24.9606 22.9721 24.9762C23.0088 24.9919 23.0482 25 23.088 25C23.1277 25 23.1671 24.9919 23.2038 24.9762C23.2406 24.9606 23.2739 24.9376 23.302 24.9086L24.9113 23.2546C24.9394 23.2257 24.9617 23.1913 24.9769 23.1535C24.9922 23.1156 25 23.0751 25 23.0341C25 22.9931 24.9922 22.9526 24.9769 22.9147C24.9617 22.8769 24.9394 22.8425 24.9113 22.8136ZM16.9193 17.4296C15.3543 19.0379 13.28 19.9238 11.0728 19.9238C8.86565 19.9238 6.79134 19.0379 5.22638 17.4296C3.66511 15.8174 2.80512 13.6805 2.80512 11.4068C2.80512 9.13303 3.66511 6.99236 5.22638 5.384C6.79134 3.77565 8.86565 2.88972 11.0728 2.88972C13.28 2.88972 15.358 3.77184 16.9193 5.384C18.4806 6.99616 19.3406 9.13303 19.3406 11.4068C19.3406 13.6805 18.4806 15.8212 16.9193 17.4296Z" fill="#BCBCBC"/>
+						</svg>
+					</button>
+					<div class="header__wrap-search">
+						<input type="text" class="header__search-text" placeholder="Что будем иcкать?">
+						<span class="header__close-search"></span>
+					</div>
+				</form>
+			</div>
+			<div class="header__mob-menu">
+				<div class="wrapper">
+					<div class="menu-button">
+						<span class="menu-button__line"></span>
+						<span class="menu-button__line"></span>
+						<span class="menu-button__line"></span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="info">
+				<div class="info__wrapper wrapper">
+					<div class="news">
+						<span class="news__tag tag">#мастеркласс</span>
+						<h3 class="news__title">Мастер-класс от Игоря Робова</h3>
+						<p class="news__info">Неоновый фотосет 2.0 7 июля 20:00</p>
+						<a href="#" class="news__button button-group">Узнать больше</a>
+					</div>
+					<div class="work">
+						<h3 class="work__title">Работы участников предыдущего мастер-класса</h3>
+						<div class="work__photo-group">
+							<picture class="work__photo work__photo-main">
+								<source srcset="/images/work_one_d.png" media="screen and (min-width:1440px)">
+								<source srcset="/images/work_one_t.png" media="screen and (min-width:769px)">
+								<source srcset="/images/work_one_tm.png" media="screen and (min-width:321px)">
+								<source srcset="/images/work_one_m.png" media="screen and (max-width:320px)">
+								<img src="/images/work_one_d.png" alt="Пример работы 1">
+							</picture>
+							<picture class="work__photo work__photo-second">
+								<source srcset="/images/work_two_d.png" media="screen and (min-width:1440px)">
+								<source srcset="/images/work_two_t.png" media="screen and (min-width:769px)">
+								<source srcset="/images/work_two_tm.png" media="screen and (min-width:321px)">
+								<source srcset="/images/work_two_m.png" media="screen and (max-width:320px)">
+								<img src="/images/work_two_d.png" alt="Пример работы 2">
+							</picture>
+							<picture class="work__photo work__photo-second">
+								<source srcset="/images/work_three_d.png" media="screen and (min-width:1440px)">
+								<source srcset="/images/work_three_t.png" media="screen and (min-width:769px)">
+								<source srcset="/images/work_three_tm.png" media="screen and (min-width:321px)">
+								<source srcset="/images/work_three_m.png" media="screen and (max-width:320px)">
+								<img src="/images/work_three_d.png" alt="Пример работы 3">
+							</picture>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="about">
+				<div class="about__wrapper wrapper">
+					<div class="about__info">
+						<h2 class="about__title">О студии</h2>
+						<p class="about__content">В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий  фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально&#8209;технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.</p>
+					</div>
+					<form action="/index.php" class="about__photo" method="GET">
+						<label for="about__setMail" class="about__label">Подписаться на рассылку</label>
+						<div class="about__wrap-input">
+							<input type="text" name="email" placeholder="E-mail" id="about__setMail" class="about__setMail">
+							<span class="about__mail-error">Недопустимый формат</span>
+						</div>
+						<input type="submit" class="about__enter button-group" value="Отправить">
+					</form>
+				</div>
+			</section>
+			<section class="project">
+				<div class="project__wrapper wrapper">
+					<h2 class="project__title">Наши проекты</h2>
+					<div class="project__content">
+						<ul class="project__up">
+							<li class="project__element-one">
+								<figure class="project__figure">
+									<picture class="project__photo">
+										<source srcset="/images/project_one_d.png" media="screen and (min-width:1440px)">
+										<source srcset="/images/project_one_t.png" media="screen and (min-width:321px)">
+										<source srcset="/images/project_one_m.png" media="screen and (max-width:320px)">
+										<img src="/images/project_one_d.png" alt="Проект 1">
+									</picture>
+									<span class="project__tag tag">#пейзаж</span>
+									<figcaption>
+										<a href="#" class="project__link">Синтетически, смешаны с не уникальными данными до степени...</a>
+										<p class="project__date">16 июня</p>
+									</figcaption>
+								</figure>
+							</li>
+							<li class="project__element-two">
+								<figure class="project__figure">
+									<picture class="project__photo">
+										<source srcset="/images/project_two_d.png" media="screen and (min-width:1440px)">
+										<source srcset="/images/project_two_t.png" media="screen and (min-width:321px)">
+										<source srcset="/images/project_two_m.png" media="screen and (max-width:320px)">
+										<img src="/images/project_two_d.png" alt="Проект 2">
+									</picture>
+									<span class="project__tag tag">#портрет</span>
+									<figcaption>
+										<a href="#" class="project__link">В своём стремлении улучшить опыт мы упускаем, что явные...</a>
+										<p class="project__date">28 мая</p>
+									</figcaption>
+								</figure>
+							</li>
+							<li class="project__element-three">
+								<figure class="project__figure">
+									<picture class="project__photo">
+										<source srcset="/images/project_three_d.png" media="screen and (min-width:1440px)">
+										<source srcset="/images/project_three_t.png" media="screen and (min-width:1024px)">
+										<source srcset="/images/project_three_tm.png" media="screen and (min-width:321px)">
+										<source srcset="/images/project_three_m.png" media="screen and (max-width:320px)">
+										<img src="/images/project_three_d.png" alt="Проект 3">
+									</picture>
+									<span class="project__tag tag">#предмет</span>
+									<figcaption>
+										<a href="#" class="project__link">Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада</a>
+										<p class="project__date">14 мая</p>
+									</figcaption>
+								</figure>
+							</li>
+							<li class="project__item-up">
+								<span class="project__tag tag">#fuji</span>
+								<p class="project__date">9 апреля</p>
+								<h3 class="project__headline">Cемантический разбор</h3>
+								<p class="project__info">В рамках спецификации современных стандартов, интерактивные прототипы</p>
+								<a href="#" class="project__button">О проекте</a>
+							</li>
+							<li class="project__item-down">
+								<span class="project__tag tag">#проектзабвение</span>
+								<p class="project__date">20 марта</p>
+								<h3 class="project__headline">Забвение</h3>
+								<p class="project__info">Играет важную роль в формировании глубокомысленных рассуждений</p>
+								<a href="#" class="project__button">О проекте</a>
+							</li>
+							<li class="project__element-four">
+								<figure class="project__figure">
+									<picture class="project__photo">
+										<source srcset="/images/project_six_d.png" media="screen and (min-width:1440px)">
+										<source srcset="/images/project_six_t.png" media="screen and (min-width:321px)">
+										<source srcset="/images/project_six_m.png" media="screen and (max-width:320px)">
+										<img src="/images/project_six_d.png" alt="Проект 2">
+									</picture>
+									<span class="project__tag tag">#ретушь</span>
+									<figcaption>
+										<a href="#" class="project__link">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</a>
+										<p class="project__date">9 марта</p>
+									</figcaption>
+								</figure>
+							</li>
+							<li class="project__element-five">
+								<figure class="project__figure">
+									<picture class="project__photo">
+										<source srcset="/images/project_seven_d.png" media="screen and (min-width:1440px)">
+										<source srcset="/images/project_seven_t.png" media="screen and (min-width:321px)">
+										<source srcset="/images/project_seven_m.png" media="screen and (max-width:320px)">
+										<img src="/images/project_seven_d.png" alt="Проект 3">
+									</picture>
+									<span class="project__tag tag">#портрет</span>
+									<figcaption>
+										<a href="#" class="project__link">С учётом сложившейся международной обстановки, новая модель организационной...</a>
+										<p class="project__date">1 марта</p>
+									</figcaption>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="contacts">
+				<div class="contacts__wrapper wrapper">
+					<h2 class="contacts__title">Контакты</h2>
+					<div class="contacts__content">
+						<div class="map">
+							<div id="contacts__map" class="contacts__map"></div>
+							<div class="map__content">
+								<div class="map__close" id="map__close">
+									<span class="map__close-line"></span>
+									<span class="map__close-line"></span>
+								</div>
+								<h3 class="map__title">Студия “High pass”</h3>
+								<p class="map__address">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82 <a href="tel:+7(495)42-423-532" class="map__phone">+7 (495) 42-423-532</a></p>
+							</div>
+						</div>
+						<form action="/index.php" class="contacts__form request">
+							<h3 class="request__title">Оставить заявку</h3>
+							<p class="request__text">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</p>
+							<div class="request__label">
+								<input type="text" placeholder="Имя" class="request__input request__input-name">
+							</div>
+							<div class="request__label">
+								<input type="text" name="email" placeholder="E-mail" class="request__input request__input-mail">
+								<span class="request__mail-error">Недопустимый формат</span>
+							</div>
+							<div class="request__label">
+								<textarea cols="5" rows="10" class="request__input request__input-coment" placeholder="Комментарий"></textarea>
+							</div>
+							<input type="submit" class="button-group" value="Отправить">
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__wrapper wrapper">
+				<div class="footer__logo">
+					<a href="#" class="logo footer__logo-link"><img class="logo__img" src="./images/logo.png" alt="Логотип"></a>
+					<p class="footer__logo-text">Фотостудия High pass® 2018-2020</p>
+				</div>
+				<div class="footer__info">
+					<p class="footer__info-text">Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.</p>
+					<p class="footer__info-auth">© Имоджен Каннингем</p>
+				</div>
+				<div class="footer__social">
+					<p class="footer__social-titile">Больше интересного:</p>
+					<ul class="footer__social-content social">
+						<li class="footer__social-item"><a href="#" class="social__link"><svg class="social__item" fill="none" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M12.129 15a2.871 2.871 0 105.742 0 2.871 2.871 0 00-5.742 0z" fill="#CACACA"/><path d="M8.286 9.92c.138-.374.358-.712.644-.99.278-.286.616-.507.99-.645.304-.118.76-.258 1.6-.296.908-.041 1.18-.05 3.48-.05s2.573.008 3.48.05c.84.038 1.297.178 1.6.296.374.138.713.359.99.645.286.278.506.616.645.99.118.303.258.76.296 1.6.042.908.05 1.18.05 3.48s-.008 2.572-.05 3.48c-.038.84-.178 1.296-.296 1.6a2.67 2.67 0 01-.645.99 2.667 2.667 0 01-.99.645c-.303.118-.76.258-1.6.296-.907.042-1.18.05-3.48.05s-2.572-.008-3.48-.05c-.84-.038-1.296-.178-1.6-.296a2.852 2.852 0 01-1.634-1.635c-.118-.304-.259-.76-.297-1.6-.041-.908-.05-1.18-.05-3.48s.009-2.572.05-3.48c.038-.84.178-1.296.297-1.6zM15 19.423a4.423 4.423 0 100-8.846 4.423 4.423 0 000 8.846zm-4.598-7.987a1.034 1.034 0 100-2.068 1.034 1.034 0 000 2.068z" fill="#CACACA"/><path d="M15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15C0 6.717 6.717 0 15 0zM6.439 18.551c.041.917.187 1.543.4 2.09a4.404 4.404 0 002.52 2.52c.547.213 1.173.358 2.09.4.918.042 1.212.052 3.55.052 2.34 0 2.633-.01 3.552-.052.917-.042 1.543-.187 2.09-.4a4.22 4.22 0 001.526-.994c.438-.43.777-.95.994-1.525.213-.548.358-1.174.4-2.09.042-.92.052-1.213.052-3.552 0-2.34-.01-2.633-.052-3.551-.041-.917-.187-1.543-.4-2.09a4.22 4.22 0 00-.994-1.526 4.218 4.218 0 00-1.525-.994c-.548-.213-1.174-.358-2.09-.4-.92-.042-1.213-.052-3.552-.052-2.34 0-2.633.01-3.551.052-.917.042-1.543.187-2.09.4a4.222 4.222 0 00-1.527.994 4.22 4.22 0 00-.993 1.525c-.213.548-.359 1.174-.4 2.09-.042.92-.052 1.213-.052 3.552 0 2.34.01 2.633.052 3.551z" fill="#CACACA"/></svg></a></li>
+						<li class="footer__social-item"><a href="#" class="social__link"><svg class="social__item" fill="none" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.75 0 0 6.762 0 15.09 0 22.62 5.49 28.87 12.66 30V19.458H8.85V15.09h3.81v-3.328c0-3.78 2.235-5.858 5.67-5.858 1.635 0 3.345.286 3.345.286v3.72h-1.89c-1.86 0-2.445 1.16-2.445 2.349v2.831h4.17l-.675 4.368H17.34V30a14.985 14.985 0 009.075-5.105A15.097 15.097 0 0030 15.09C30 6.762 23.25 0 15 0z" fill="#CACACA"/></svg></a></li>
+						<li class="footer__social-item"><a href="#" class="social__link"><svg class="social__item" fill="none" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15zm7.609 16.622c.699.683 1.439 1.326 2.066 2.08.278.333.54.677.74 1.065.285.553.027 1.159-.467 1.192l-3.073-.001c-.794.066-1.426-.255-1.958-.797-.425-.433-.82-.894-1.229-1.342a2.871 2.871 0 00-.553-.492c-.42-.272-.783-.189-1.023.249-.245.445-.3.939-.324 1.434-.033.725-.252.914-.979.948-1.554.073-3.028-.163-4.398-.946-1.208-.69-2.144-1.666-2.959-2.77-1.587-2.152-2.803-4.514-3.895-6.944-.246-.547-.066-.84.538-.85a85.522 85.522 0 013.009-.002c.408.007.678.24.835.625.542 1.334 1.206 2.603 2.039 3.78.222.313.448.625.77.846.357.245.628.164.796-.233.107-.253.154-.523.177-.794.08-.927.09-1.854-.049-2.777-.086-.578-.41-.951-.987-1.06-.293-.056-.25-.165-.108-.332.248-.29.48-.47.944-.47h3.472c.547.107.67.353.744.904l.003 3.859c-.006.213.107.845.49.985.307.101.51-.145.693-.34.833-.883 1.426-1.926 1.957-3.005.235-.476.437-.969.634-1.462.146-.365.373-.545.785-.539l3.343.004c.099 0 .199.001.296.018.564.097.718.339.544.889-.275.863-.808 1.583-1.329 2.304-.558.772-1.154 1.517-1.707 2.293-.508.709-.468 1.066.163 1.681z" fill="#CACACA"/></svg></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
+		<script src="script/app.js"></script>
+	</body>
+</html>
